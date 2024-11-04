@@ -1,6 +1,7 @@
 import React from 'react'
 import { BsFillSuitcaseLgFill } from "react-icons/bs";
 import { IoLocationSharp } from "react-icons/io5";
+import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
@@ -9,8 +10,15 @@ const Hero = () => {
             style={{ backgroundImage: "url('/dubai img.png')", backgroundPosition: 'top', backgroundSize: 'cover' }}
         >
             <div className='w-full h-full bg-blue-900/60 text-white flex gap-2 justify-center items-center flex-col'>
-                <h1 className='font-bold sm:text-5xl text-4xl'>Are You a Supplier?</h1>
-                <h3 className='font-normal sm:text-4xl text-2xl'>Explore Matching Opportunities.</h3>
+                
+                <motion.div
+                    whileInView={{ y: [-70, 0], opacity: [0, 1] }}
+                    transition={{ duration: 1 }}
+                    viewport={{ once: false }}
+                >
+                    <h1 className='font-bold sm:text-5xl text-4xl'>Are You a Supplier?</h1>
+                    <h3 className='font-normal sm:text-4xl text-2xl'>Explore Matching Opportunities.</h3>
+                </motion.div>
 
                 <div
                     className="flex sm:flex-row flex-col justify-center items-center sm:space-x-4 sm:gap-0 gap-3 p-4 mt-4"
